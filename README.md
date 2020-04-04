@@ -11,3 +11,17 @@ ssh-keygen -R <ip>
 ```bash
 ssh -o StrictHostKeyChecking=no <ip>
 ```
+
+## secure sshd
+
+### use knockd
+
+```bash
+cat /etc/ssh/sshd_config
+
+Protocol 2
+#Avoid port 22
+
+
+
+```
