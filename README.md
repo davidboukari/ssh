@@ -26,7 +26,12 @@ cat /etc/ssh/sshd_config
 
 Protocol 2
 #Avoid port 22
-
-
-
+```
+## Set identityFile
+```
+cat ~/ssh/config
+Host myhostserver
+  Hostname xxx.xxx
+  User myuser
+  IdentityFile ~/.ssh/mykey.pem
 ```
