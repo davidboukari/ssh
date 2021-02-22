@@ -35,3 +35,8 @@ Host myhostserver
   User myuser
   IdentityFile ~/.ssh/mykey.pem
 ```
+
+## ssh with bastion
+```
+ssh -J ubuntu@192.168.0.54   ubuntu@192.168.1.1
+```
