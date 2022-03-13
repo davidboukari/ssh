@@ -39,4 +39,7 @@ Host myhostserver
 ## ssh with bastion
 ```
 ssh -J ubuntu@192.168.0.54   ubuntu@192.168.1.1
+
+ssh -J ubuntu@192.168.0.119 ubuntu@10.0.0.31
+ssh ubuntu@192.168.0.119  -Y ssh -tt ubuntu@10.0.0.31
 ```
