@@ -4,6 +4,8 @@
 
 ```bash
 ssh-keygen -R <ip>
+
+ssh-keygen -f "/root/.ssh/known_hosts" -R 10.1.1.3
 ```
 ### generate a public key from a private key
 
