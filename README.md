@@ -1,5 +1,17 @@
 # ssh
 
+## Finger print
+```
+for key in *.pem
+do
+  echo $key
+  ssh-keygen -lf $key
+  ssh-keygen -lf $key -E md5
+  ssh-keygen -lf $key -m pkcs8 | openssl pkey -pubin -outform der | openssl md5 -c
+  openssl pkcs8 -in $key -inform PEM -outform DER -topk8 -nocrypt | openssl sha1 -c
+done
+```
+
 ### Remove a key in know host list "~/.ssh/known_hosts"
 
 ```bash
