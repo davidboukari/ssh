@@ -1,6 +1,39 @@
 # ssh
 
-## Finger print
+## ssh config
+```
+cat 1connectall.sh<<EOF
+ssh-agent > ~/agent.sh
+source ~/agent.sh
+ssh-add ~/.ssh/mykey.pem
+ssh-add -l
+EOF
+
+cat 2connectall.sh<<EOF
+source ~/agent.sh
+ssh-add ~/.ssh/mykey.pem
+ssh-add -l
+EOF
+
+cat ~/.ssh/config<<EOF
+Host bastion
+  Hostname 192.168.0.10
+  User  ec2-user
+  #IdentityFile ~/.ssh/mykey.pem
+  ForwardAgent yes
+  RequestTTY force
+  DynamicForward 1234
+
+Host compute1
+  Hostname 192.168.0.20
+  User ubuntu
+  ProxyCommand nc -x localhost:1234
+EOF
+
+ssh -A compute1
+```
+
+## Finger print aws
 ```
 for key in *.pem
 do
