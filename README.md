@@ -1,5 +1,10 @@
 # ssh
 
+## Generate keypair
+```
+ssh-keygen -t rsa -f ~/.ssh/mykey.pem 
+```
+
 ## ssh config
 ```
 cat 1connectall.sh<<EOF
