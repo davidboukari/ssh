@@ -3,8 +3,17 @@
 ## Generate keypair
 ```
 ssh-keygen -t rsa
+ssh-keygen -t rsa  -b 4096
+
+# with the filename as parameter
 ssh-keygen -t rsa -f ~/.ssh/mykey.pem 
 ssh-keygen -t rsa  -b 4096 -f ~/.ssh/mykey.pem 
+
+# With comment
+ssh-keygen -t rsa  -b 4096 -c "my comment" -f ~/.ssh/mykey.pem 
+
+# Change Comment without overwrite the key
+ssh-keygen -t rsa  -b 4096 -c -C "my new comment" -f ~/.ssh/mykey.pem 
 ```
 
 ## ssh config
