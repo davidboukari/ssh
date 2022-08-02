@@ -2,7 +2,9 @@
 
 ## Generate keypair
 ```
+ssh-keygen -t rsa
 ssh-keygen -t rsa -f ~/.ssh/mykey.pem 
+ssh-keygen -t rsa  -b 4096 -f ~/.ssh/mykey.pem 
 ```
 
 ## ssh config
