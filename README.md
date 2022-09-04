@@ -49,6 +49,20 @@ EOF
 ssh -A compute1
 ```
 
+## LocalForward
+```
+cat ~/.ssh/config<<EOF
+Host bastion
+  Hostname 192.168.0.10
+  User  ec2-user
+  #IdentityFile ~/.ssh/mykey.pem
+  ForwardAgent yes
+  RequestTTY force
+  DynamicForward 1234
+  LocalForward 8888 12.34.56.78:8000
+```
+
+
 ## Finger print aws
 ```
 for key in *.pem
