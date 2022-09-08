@@ -16,7 +16,7 @@ ssh-keygen -t rsa  -b 4096 -c "my comment" -f ~/.ssh/mykey.pem
 ssh-keygen -t rsa  -b 4096 -c -C "my new comment" -f ~/.ssh/mykey.pem 
 ```
 
-## ssh config
+## ssh config use Agent to load keys and -A option to connect
 ```
 cat 1connectall.sh<<EOF
 ssh-agent > ~/agent.sh
